@@ -1,0 +1,142 @@
+.checkbox {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0;
+
+  &--light {
+    .checkbox__text {
+      color: $white;
+
+      svg {
+        stroke: $white;
+      }
+
+      &::before {
+        border-color: $white;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding-left: calc(22px + 18px);
+    cursor: pointer;
+    width: 100%;
+    min-height: 18px;
+    font-size: 14px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    @include r($breakpoint-2) {
+      min-height: 20px;
+      padding-left: 30px;
+    }
+
+    svg {
+      position: absolute;
+      top: -2px;
+      left: 5px;
+      stroke: $dark;
+      z-index: 1;
+      @include ease;
+      width: 14px;
+      height: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(.5);
+    }
+
+    span {
+      margin-top: -1px;
+
+      //@include r($breakpoint-2) {
+      //  margin-top: 1px;
+      //}
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    cursor: pointer;
+    &:checked + .checkbox__text,
+    &:checked + .checkbox__text {
+      svg {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.radio {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0;
+
+  &__text {
+    display: grid;
+    grid-template-columns: 20px auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    padding: 20px;
+    color: $dark;
+    @include font-g;
+    font-size: 14px;
+    @include ease-long;
+    border: 1px solid $dark;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    svg {
+      width: 20px;
+      height: auto;
+      max-height: 20px;
+      fill: $dark;
+    }
+
+    &:hover {
+      border-color: $light;
+    }
+
+    &:active, {
+      border-color: $lightBlue;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    cursor: pointer;
+
+    &:checked + .radio__text {
+      background-color: $darkGray;
+    }
+  }
+
+}

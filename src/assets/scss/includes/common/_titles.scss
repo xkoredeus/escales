@@ -1,0 +1,140 @@
+$title-h1: 64px;
+$title-h2: 48px;
+$title-h3: 42px;
+$title-h35: 32px;
+$title-h4: 26px;
+$title-h5: 22px;
+
+$text: 20px;
+$text1: 18px;
+$text2: 16px;
+$text3: 14px;
+
+@mixin title-h1 {
+  font-size: $title-h1;
+}
+@mixin title-h2 {
+  font-size: $title-h2;
+}
+@mixin title-h3 {
+  font-size: $title-h3;
+}
+@mixin title-h35 {
+  font-size: $title-h35;
+}
+@mixin title-h4 {
+  font-size: $title-h4;
+}
+@mixin title-h5 {
+  font-size: $title-h5;
+}
+
+@mixin text {
+  font-size: $text;
+}
+@mixin text1 {
+  font-size: $text1;
+}
+@mixin text2 {
+  font-size: $text2;
+}
+@mixin text3 {
+  font-size: $text3;
+}
+
+.title-h1 { @include title-h1 }
+.title-h2 { @include title-h2 }
+.title-h3 { @include title-h3 }
+.title-h35 { @include title-h35 }
+.title-h4 { @include title-h4 }
+.title-h5 { @include title-h5 }
+.text { @include text }
+.text1 { @include text1 }
+.text2 { @include text2 }
+.text3 { @include text3 }
+
+.title-mb-0 {
+  margin-bottom: 60px;
+}
+.title-mb-1 {
+  margin-bottom: 40px;
+}
+.title-mb-2 {
+  margin-bottom: 30px;
+}
+.title-mb-3 {
+  margin-bottom: 20px;
+}
+
+.section-padding-1 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.section-with-title {
+  margin-top: -60px;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-right: 61px;
+  transform: translateY(100px);
+  z-index: 2;
+
+  span {
+    position: relative;
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    color: $white;
+    @include font-extralight;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+}
+
+.section-title-decor {
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    top: 0;
+
+    @include rmin($breakpoint-4) {
+      $left-offset: calc((calc(100vw - #{map-get($container-max-widths, sm)} + 80px) ) / 2);
+      left: calc(-1 * #{$left-offset});
+      width: calc(#{$left-offset} + 100%);
+    };
+
+    @include rmin($breakpoint-3) {
+      $left-offset: calc((calc(100vw - #{map-get($container-max-widths, md)} + 80px) ) / 2);
+      left: calc(-1 * #{$left-offset});
+      width: calc(#{$left-offset} + 100%);
+    };
+
+    @include rmin($breakpoint-2) {
+      $left-offset: calc((calc(100vw - #{map-get($container-max-widths, lg)} + 80px) ) / 2);
+      left: calc(-1 * #{$left-offset});
+      width: calc(#{$left-offset} + 100%);
+    };
+
+    @include rmin($breakpoint-1) {
+      $left-offset: calc((calc(100vw - #{map-get($container-max-widths, xl)} + 80px) ) / 2);
+      left: calc(-1 * #{$left-offset});
+      width: calc(#{$left-offset} + 100%);
+    };
+  }
+
+  &::before {
+    background: linear-gradient(90deg, #09468C 0%, #3586D6 49.8%, rgba(53, 134, 214, 0) 100%);
+  }
+
+  &::after {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(86deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
+  }
+}

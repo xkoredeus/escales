@@ -1,0 +1,10 @@
+.preloader {
+  &__wrapper {
+    background: #3E3E3E;
+    position: fixed;
+    height: 100vh;
+    min-height: 300px;
+    width: 100vw;
+    z-index: 300;
+  }
+}

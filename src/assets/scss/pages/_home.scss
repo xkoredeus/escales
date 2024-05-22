@@ -1,0 +1,497 @@
+.offer {
+  position: relative;
+  min-height: 100vh;
+  @include cv;
+}
+
+.offer-lines {
+  position: absolute;
+  top: -43%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  transform: scaleY(-100%) scaleX(-100%);
+  opacity: .5;
+}
+
+.hits .slider {
+  overflow: hidden;
+}
+
+.hit-slide {
+  @include cv;
+  height: 760px;
+  width: 100%;
+  overflow: hidden;
+
+  &:hover {
+    .hit-slide__in {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__in {
+    position: relative;
+    color: $white;
+    text-align: center;
+    padding: 30px;
+    @include cv;
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    @include ease-long;
+    opacity: 0;
+    visibility: hidden;
+
+    &::before {
+      @include ovl;
+      background-color: $dark;
+      opacity: 0.7;
+    }
+  }
+
+  &__title {
+    position: relative;
+    line-height: 1.2;
+  }
+
+  &__info {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1.1;
+  }
+}
+
+.views-grid {
+  @include cv;
+  overflow: hidden;
+}
+.views-title {
+  position: relative;
+  @include flex-center;
+  height: 100%;
+  width: 100%;
+
+  .title-h1 {
+    position: relative;
+  }
+
+  .views-decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1920px;
+    height: 1080px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%) scaleY(-100%) scaleX(-100%);
+  }
+}
+.views-picture {
+  position: relative;
+  @include cv;
+  height: 760px;
+  z-index: 1;
+}
+
+.gift {
+  @include cv;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.gift-girl {
+  &__wrapper {
+    position: relative;
+    height: 100%;
+
+    img {
+      position: absolute;
+      width: auto;
+      height: calc(100% + calc(140px + 80px));
+      right: -110px;
+      top: -140px;
+      //transform: translateY(-50%);
+    }
+  }
+}
+
+.gift-form {
+  width: calc(100% + 40px);
+  margin-left: -40px;
+  padding: 40px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(62deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include r($breakpoint-1) {
+      max-width: 220px;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    padding-right: 230px;
+    margin-bottom: 29px;
+
+    @include r($breakpoint-1) {
+      padding-right: 240px;
+    }
+  }
+}
+
+@mixin form-max-width {
+  max-width: 450px;
+}
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: auto 230px;
+  gap: 70px;
+  align-items: flex-end;
+}
+
+.gift-info {
+  margin-bottom: calc(60px + 40px);
+}
+
+.gift-form__fields {
+  display: flex;
+  flex-direction: column;
+  @include form-max-width;
+  gap: 40px;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.feed {
+  padding-top: 38px;
+}
+
+.feed-decor__wrapper {
+  position: relative;
+  height: 100%;
+
+  img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 160%;
+  }
+}
+
+.feed-form {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__in {
+    @include form-max-width;
+  }
+}
+
+.feed-radio__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 60px;
+}
+.feed-input__wrapper {
+  & > * {
+    margin-bottom: 40px;
+  }
+}
+
+.scheme {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 108px;
+}
+
+.meeting {
+  position: relative;
+  @include cv;
+  @include flex-center;
+  height: 100%;
+
+  .link-underline {
+    position: absolute;
+    left: 50%;
+    bottom: 108px;
+    transform: translateX(-50%);
+
+  }
+}
+
+.meeting-button {
+  svg {
+    width: 60px;
+    height: 60px;
+    fill: $dark;
+    @include ease-long;
+  }
+
+  &:hover {
+    svg {
+      fill: $light;
+      transform: scale(.9);
+    }
+  }
+}
+
+.advantage {
+  text-align: center;
+
+  &__picture {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 42px;
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__info {
+    line-height: 1.1;
+  }
+}
+
+.escort .slider {
+  overflow: hidden;
+}
+.escort-slide {
+  height: 660px;
+  @include cv;
+}
+
+.escort-form {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  background-color: $white;
+
+  .form-input {
+    flex-grow: 1;
+  }
+}
+
+.likes-picture__wrapper {
+  position: relative;
+  height: 100%;
+
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 120%;
+  }
+}
+
+.likes {
+  &__in {
+    padding-top: 95px;
+    padding-bottom: 120px;
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 215px);
+    gap: 10px;
+  }
+}
+
+.likes-button {
+  display: grid;
+  grid-template-columns: 20px auto;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  white-space: nowrap;
+  color: $white;
+  padding: 20px 15px;
+  @include text3;
+  @include font-g;
+
+  &:hover {
+    color: $white;
+    opacity: .8;
+  }
+
+  svg {
+    fill: $white;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.sales {
+  .swiper-nav button {
+    top: calc(calc(524px / 2) - 30px);
+    transform: translateY(0);
+  }
+}
+.sales .slider {
+  overflow: hidden;
+}
+
+.sale {
+  text-align: center;
+
+  &:hover {
+    .sale__title {
+      color: $light;
+    }
+    .sale-form {
+      opacity: 1;
+      visibility: visible;
+
+      &__in {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__top {
+    position: relative;
+    width: 100%;
+    height: 524px;
+    @include cv;
+    margin-bottom: 42px;
+    overflow: hidden;
+  }
+  &__title {
+    margin-bottom: 30px;
+    @include ease-long;
+  }
+  &__info {
+    line-height: 1.1;
+  }
+}
+
+.sale-form {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  text-align: left;
+  color: $white;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(9, 70, 140, 0.7);
+  backdrop-filter: blur(5px);
+  @include ease-long;
+
+  &__in {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateY(-10px);
+    @include ease-long;
+
+    .title-h35 {
+      margin-bottom: 53px;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 43px;
+  }
+
+  .button {
+    margin-top: 40px;
+    align-self: flex-start;
+  }
+}
+
+
+.contacts {
+  overflow: hidden;
+}
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: flex-start;
+
+  &__wrapper {
+    margin-left: calc(8.33% * 4 + 40px * 4);
+  }
+}
+
+.contacts-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.contacts-icons {
+  margin-top: -20px;
+  display: flex;
+  gap: 8px;
+
+  .contacts-icon {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+    &:hover {
+      svg {
+        &:last-child {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    @include ease;
+
+    &:last-child {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+input {
+  border: none;
+  outline: none;
+  box-shadow: unset;
+  background: none;
+}
+
+.form-input {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  @include font-g;
+  padding-bottom: 6px;
+  border-bottom: 1px solid $gray;
+
+  &::placeholder {
+    color: $dark;
+  }
+
+  &:focus {
+    border-bottom-color: $dark;
+  }
+
+  &--light {
+    color: $white;
+    border-bottom-color: $white;
+
+    &::placeholder {
+      color: $white;
+    }
+
+    &:focus {
+      border-bottom-color: $lightBlue;
+    }
+  }
+}

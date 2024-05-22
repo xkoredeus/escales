@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Escales Gothic';
+  src: url('../fonts/EscalesGothic-Regular.woff2') format('woff2'),
+  url('../fonts/EscalesGothic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EscalesGothicBold';
+  src: url('../fonts/EscalesGothicBold.woff2') format('woff2'),
+  url('../fonts/EscalesGothicBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Parisienne';
+  src: url('../fonts/Parisienne-Regular.woff2') format('woff2'),
+  url('../fonts/Parisienne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

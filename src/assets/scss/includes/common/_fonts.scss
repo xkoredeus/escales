@@ -1,0 +1,41 @@
+$font-thin: 100;
+$font-extralight: 200;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semi: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+$font-black: 900;
+
+$font-g: 'Escales Gothic';
+$font-gbold: 'EscalesGothicBold';
+$font-p: 'Parisienne';
+
+.font-thin { font-weight: $font-thin; }
+.font-extralight { font-weight: $font-extralight; }
+.font-light { font-weight: $font-light; }
+.font-regular { font-weight: $font-regular; }
+.font-medium { font-weight: $font-medium; }
+.font-semi { font-weight: $font-semi; }
+.font-bold { font-weight: $font-bold; }
+.font-extrabold { font-weight: $font-extrabold; }
+.font-black { font-weight: $font-black; }
+
+.font-g { font-family: $font-g; }
+.font-gbold { font-family: $font-gbold; }
+.font-p { font-family: $font-p; }
+
+@mixin font-thin { font-weight: $font-thin; }
+@mixin font-extralight { font-weight: $font-extralight; }
+@mixin font-light { font-weight: $font-light; }
+@mixin font-regular { font-weight: $font-regular; }
+@mixin font-medium { font-weight: $font-medium; }
+@mixin font-semi { font-weight: $font-semi; }
+@mixin font-bold { font-weight: $font-bold; }
+@mixin font-extrabold { font-weight: $font-extrabold; }
+@mixin font-black { font-weight: $font-black; }
+
+@mixin font-g { font-family: $font-g; }
+@mixin font-gbold { font-family: $font-gbold; }
+@mixin font-p { font-family: $font-p; }
