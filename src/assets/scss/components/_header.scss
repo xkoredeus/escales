@@ -1,3 +1,9 @@
+.header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
 .header-in {
   position: relative;
 }
@@ -5,6 +11,20 @@
 .header-logo {
   position: relative;
   z-index: 1;
+
+  @include r($breakpoint-2) {
+    svg {
+      width: 164px;
+      height: 69px;
+    }
+  }
+
+  @include r($breakpoint-4) {
+    svg {
+      width: 123px;
+      height: 51px;
+    }
+  }
 
   &:hover {
     opacity: .8;
@@ -16,6 +36,11 @@
   padding-top: 40px;
   padding-bottom: 56px;
 
+  @include r($breakpoint-4) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   &::before {
     position: absolute;
     content: '';
@@ -24,6 +49,11 @@
     left: 0;
     top: 0;
     background: linear-gradient(180deg, rgba(9, 70, 140, 0.35) 0%, rgba(9, 70, 140, 0) 100%);
+
+
+    @include r($breakpoint-25) {
+      display: block;
+    }
   }
 
   &__in {
@@ -38,6 +68,20 @@
 .header-subtitle {
   position: relative;
   max-width: 440px;
+
+  @include r($breakpoint-1) {
+    max-width: 350px;
+  }
+
+  @include r($breakpoint-2) {
+    max-width: 300px;
+  }
+
+  &__wrapper {
+    @include r($breakpoint-25) {
+      display: none;
+    }
+  }
 
   span {
     position: relative;
@@ -64,6 +108,20 @@
   align-items: center;
   max-width: 303px;
 
+  @include r($breakpoint-25) {
+    display: none;
+  }
+
+  @include r($breakpoint-2) {
+    max-width: unset;
+  }
+
+  &__address {
+    @include r($breakpoint-2) {
+      display: none;
+    }
+  }
+
   &__picture {
     min-width: 66px;
     width: 66px;
@@ -79,12 +137,27 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+
+  &__wrapper {
+    @include r($breakpoint-25) {
+      display: none;
+    }
+  }
 }
 
 .header-socials {
-  position: absolute;
-  right: 0;
-  bottom: -30px;
+  //position: absolute;
+  //right: 0;
+  //bottom: -30px;
+
+  &__wrapper {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    @include r($breakpoint-25) {
+      display: none;
+    }
+  }
 }
 
 .socials {
@@ -99,6 +172,16 @@
       height: 30px;
       fill: $light;
       @include ease-long;
+
+      @include r($breakpoint-2) {
+        width: 25px;
+        height: 25px;
+      }
+
+      @include r($breakpoint-4) {
+        width: 22px;
+        height: 22px;
+      }
     }
 
     &:hover {
@@ -122,25 +205,25 @@
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
     backdrop-filter: blur(10px);
 
-    @include rmin($breakpoint-4) {
+    @include rmin(540) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, sm)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + 100%);
     };
 
-    @include rmin($breakpoint-3) {
+    @include rmin(984) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, md)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + 100%);
     };
 
-    @include rmin($breakpoint-2) {
+    @include rmin(1306) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, lg)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + calc(100% + 14px));
     };
 
-    @include rmin($breakpoint-1) {
+    @include rmin(1720) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, xl)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + calc(100% + 76px));
@@ -174,6 +257,14 @@
     @include font-g;
     padding: 20px 35px;
 
+    @include r($breakpoint-1) {
+      padding: 18px 27px;
+    }
+
+    @include r($breakpoint-2) {
+      padding: 18px 24px;
+    }
+
     &::after {
       position: absolute;
       content: '';
@@ -184,7 +275,7 @@
       top: 0;
     }
 
-    &:first-child {
+    &:nth-child(2) {
       padding-left: 0;
     }
     &:last-child {
@@ -195,4 +286,118 @@
       }
     }
   }
+}
+
+.burger {
+  position: relative;
+  width: 30px;
+  height: 25px;
+  display: none;
+  @include r($breakpoint-25) {
+    display: block;
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include ease;
+
+    &:nth-child(2) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.header-phone {
+  display: none;
+  @include r($breakpoint-25) {
+    display: block;
+  }
+  svg {
+    fill: $white;
+  }
+}
+
+.header-mobile-top {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: none;
+
+  @include r($breakpoint-25) {
+    display: block;
+  }
+
+  &::before {
+    @include ovl;
+    background: linear-gradient(90deg, rgba(9, 70, 140, 0.5) 0%, rgba(53, 134, 214, 0.5) 49.8%, rgba(53, 134, 214, 0) 100%);
+  }
+  &::after {
+    @include ovl;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+  }
+
+  & > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__decor {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+    //backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+
+  &__in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__text {
+    .header-subtitle {
+      &::before {
+        display: none;
+      }
+    }
+    span {
+      font-size: 10px;
+      text-align: center;
+      @include font-gbold;
+      @include r($breakpoint-4) {
+        font-size: 8px;
+      }
+    }
+    .lh14 {
+      line-height: 1;
+      text-align: center;
+    }
+  }
+
+  &__socials {
+    .header-socials {
+      position: static;
+
+    }
+  }
+}
+
+.button-geo {
+  padding-left: 7px;
+}
+
+.menu {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
 }

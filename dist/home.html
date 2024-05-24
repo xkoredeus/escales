@@ -13,105 +13,74 @@
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 
-<body>
+<body class="is-loading">
 
     <!-- preloader-->
     <style>
+        .preloader {
+            position: relative;
+            width: 130px;
+            height: 18px;
+            border: 1px solid #09468C;
+            -webkit-animation-name: blinker;
+            animation-name: blinker;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+    
+        .preloader::before {
+            position: absolute;
+            content: '';
+            width: calc(100% / 2);
+            height: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #3586D6;
+        }
+    
         .preloader__wrapper {
+            background: #fff;
             position: fixed;
-            width: 100vw;
-            height: 100vh;
             left: 0;
             top: 0;
             right: 0;
             bottom: 0;
-            z-index: 10000;
-            background-color: #fff;
+            height: 100vh;
+            width: 100vw;
+            z-index: 1000;
             display: -webkit-box;
-            display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
             -webkit-box-pack: center;
-            -webkit-justify-content: center;
             -ms-flex-pack: center;
             justify-content: center;
             -webkit-box-align: center;
-            -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center;
         }
-        .preloader{
-            display: block;
-            position: relative;
-            width: 105px;
-            height: 105px;
-            border-radius: 50%;
-            border: 4px solid transparent;
-            border-top: 4px solid #09468C;
-            -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
-            opacity: .7;
-        }
     
-        .preloader::before,
-        .preloader::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            border: 4px solid transparent;
-        }
-        .preloader::before {
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            border-top-color: #3586D6;
-            -webkit-animation: spin 3s linear infinite;
-            animation: spin 3.5s linear infinite;
-            opacity: .4;
-        }
-        .preloader::after {
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            border-top-color: #C3CCDB;
-            -webkit-animation: spin 1.5s linear infinite;
-            animation: spin 1.75s linear infinite;
-            opacity: .6;
-        }
-        -webkit-@keyframes spin {
-            -webkit-from {
-                -webkit-transform: rotate(0deg);
-                -ms-transform: rotate(0deg);
-                transform: rotate(0deg);
-            }
-            -webkit-to {
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-                transform: rotate(360deg);
-            }
-        }
-    
-        @-webkit-keyframes spin {
+        @-webkit-keyframes blinker {
             from {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+                opacity: 1.0;
             }
             to {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+                opacity: 0.0;
             }
         }
     
-        @keyframes spin {
+        @keyframes blinker {
             from {
-                -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+                opacity: 1.0;
             }
             to {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+                opacity: 0.0;
             }
         }
     </style>
@@ -125,58 +94,93 @@
 
             <section id="offer" class="offer section-mb-3" style="background-image: url('assets/img/offer-1.jpg');">
                 <div class="offer-lines" style="background-image: url('assets/img/circled-lines.gif');"></div>
+            
                 <header class="header">
                     <div class="header-in">
+                        <div class="header-mobile-top">
+                            <div class="container">
+                                <div class="header-mobile-top__in">
+                                    <button class="button-geo">
+                                        <svg width="17" height="22">
+                                            <use xlink:href="#geo"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="header-mobile-top__text"></div>
+                                    <div class="header-mobile-top__socials"></div>
+                                </div>
+                            </div>
+                            <span class="header-mobile-top__decor"></span>
+                        </div>
                         <div class="header-top">
                             <div class="container">
                                 <div class="header-top__in">
+                                    <button class="burger">
+                                        <svg width="30" height="19">
+                                            <use xlink:href="#burger"></use>
+                                        </svg>
+                                        <svg width="24" height="25">
+                                            <use xlink:href="#cross"></use>
+                                        </svg>
+                                    </button>
                                     <a href="#" class="header-logo">
                                         <svg width="210" height="88">
                                             <use xlink:href="#logo"></use>
                                         </svg>
                                     </a>
+                                    <a href="tel:88008008080" class="header-phone">
+                                        <svg width="30" height="28">
+                                            <use xlink:href="#phone"></use>
+                                        </svg>
+                                    </a>
                 
-                                    <div class="header-subtitle text3 font-g lh14">
-                                    <span>Французская марка одежды для мужчин и женщин в&nbsp;"Крокус&nbsp;Сити&nbsp;Молл" с&nbsp;индивидуальным порядковым
+                                    <div class="header-subtitle__wrapper">
+                                        <div class="header-subtitle text3 font-g lh14">
+                                            <span>Французская марка одежды для мужчин и женщин в&nbsp;"Крокус&nbsp;Сити&nbsp;Молл" с индивидуальным порядковым
                                     номером на каждом изделии</span>
+                                        </div>
                                     </div>
                                     <div class="header-info text3 font-g">
                                         <div class="header-info__picture" style="background-image: url('assets/img/header-map.jpg');"></div>
-                                        <div>66 км <span class="font-gbold">МКАД</span>, Московская обл., <br>
+                                        <div class="header-info__address">66 км <span class="font-gbold">МКАД</span>, Московская обл., <br>
                                             г. Красногорск, <br>
                                             ул. Международная, д. 8</div>
                                     </div>
                 
-                                    <div class="header-contacts">
-                                        <a href="tel:+7 (000) 000-00-00" class="header-tel font-gbold title-h4">+7 (000) 000-00-00</a>
-                                        <div class="text3 font-g">ежедневно с 10:00-22:00</div>
+                                    <div class="header-contacts__wrapper">
+                                        <div class="header-contacts">
+                                            <a href="tel:+7 (000) 000-00-00" class="header-tel font-gbold title-h4">+7 (000) 000-00-00</a>
+                                            <div class="text3 font-g">ежедневно с 10:00-22:00</div>
+                                        </div>
                                     </div>
                 
-                                    <div class="header-socials socials">
-                                        <a href="#" class="socials__icon">
-                                            <svg>
-                                                <use xlink:href="#ws"></use>
-                                            </svg>
-                                        </a>
-                                        <a href="#" class="socials__icon">
-                                            <svg>
-                                                <use xlink:href="#tg"></use>
-                                            </svg>
-                                        </a>
+                                    <div class="header-socials__wrapper">
+                                        <div class="header-socials socials">
+                                            <a href="#" class="socials__icon">
+                                                <svg>
+                                                    <use xlink:href="#ws"></use>
+                                                </svg>
+                                            </a>
+                                            <a href="#" class="socials__icon">
+                                                <svg>
+                                                    <use xlink:href="#tg"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
+                
                                 </div>
                             </div>
                         </div>
-                        <div class="container">
+                        <div class="container header-nav__container">
                             <div class="header-nav">
                                 <div class="header-nav__decor">
                                     <div class="header-nav__decor-in"></div>
                                 </div>
-                                <a href="#" class="header-nav__link js-button-anchor" data-to="#hits">Хиты сезона</a>
+                                <a href="#" class="header-nav__link js-button-anchor" data-to="#hits">Хиты<br class="d-md-inline d-lg-none"> сезона</a>
                                 <a href="#" class="header-nav__link js-button-anchor" data-to="#views">Каталог</a>
-                                <a href="#" class="header-nav__link js-button-anchor" data-to="#advantages">О магазине</a>
+                                <a href="#" class="header-nav__link js-button-anchor" data-to="#advantages">О&nbsp;магазине</a>
                                 <a href="#" class="header-nav__link js-button-anchor" data-to="#escort">Шопинг<br> сопровождение</a>
-                                <a href="#" class="header-nav__link js-button-anchor" data-to="#likes">Подбор образа<br> по фото</a>
+                                <a href="#" class="header-nav__link js-button-anchor" data-to="#likes">Подбор&nbsp;образа<br> по&nbsp;фото</a>
                                 <a href="#" class="header-nav__link js-button-anchor" data-to="#sales">Распродажа</a>
                                 <a href="#" class="header-nav__link js-button-anchor" data-to="#contacts">Контакты</a>
                             </div>
@@ -185,8 +189,33 @@
                     </div>
                 </header>
                 <div id="menu" class="menu">
-                
-                </div></section>
+                    <div class="container">
+                        <div class="menu__in"></div>
+                    </div>
+                </div>
+                <div class="offer-slide">
+                    <div class="container">
+                        <div class="row h-100">
+                            <div class="col-lg-8 col-11">
+                                <div class="offer-info">
+                                    <div class="offer-info__text">
+                                        <div class="title-h2 font-medium">Европейский бутик с коллекцией<br class="d-none d-md-inline">
+                                            2024 года в&nbsp;1&nbsp;минуте от&nbsp;МКАД</div>
+                                        <div class="text font-g">Более 700 безупречных<br class="d-md-none"> образов <span class="font-gbold">для работы и отдыха</span></div>
+                                    </div>
+            
+                                    <button class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-1 h-100">
+                                <div class="offer-picture__wrapper">
+                                    <img src="assets/img/offer-0-2.png" alt="offer picture">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="hits" class="hits section-with-title section-mb-1">
                 <div class="container">
                     <div class="section-title title-h3 flex-center">
@@ -253,19 +282,19 @@
                 <div class="container">
                     <div class="views-grid" style="background-image: url('assets/img/views-bg.jpg')">
                         <div class="row row-gap-40">
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                                 <div class="views-title">
                                     <div class="views-decor" style="background-image: url('assets/img/circled-lines.gif');"></div>
-                                    <div class="title-h1 font-extralight upp tac">Повседневные образы</div>
+                                    <div class="title-h1 views-title-content-left font-extralight upp tac">Повседневные образы</div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                                 <div class="views-picture" style="background-image: url('assets/img/views-1.jpg')"></div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-md-8">
                                 <div class="views-picture" style="background-image: url('assets/img/views-2.jpg')"></div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <div class="views-picture" style="background-image: url('assets/img/views-3.jpg')"></div>
                             </div>
                         </div>
@@ -275,34 +304,40 @@
             <section class="section-mb-3 gift" style="background-image: url('assets/img/gift-bg.jpg');">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <div class="gift-girl__wrapper">
                                 <img src="assets/img/gift-girl.png" alt="Girl">
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="gift-form">
-                                <div class="title-h3 font-medium gift-form__title">Дарим 30&nbsp;000 рублей<br> на шопинг</div>
-                                <img class="gift-form__decor" src="assets/img/gift-form-decor.png" alt="decor">
-                                <div class="gift-grid">
-                                    <form class="gift-form__fields">
-                                        <input type="text" class="form-input" placeholder="Имя фамилия">
-                                        <input type="tel" class="form-input js-tel" placeholder="Телефон">
-                                        <input type="email" class="form-input" placeholder="Email">
-                                        <label class="checkbox">
-                                            <input type="checkbox" checked>
-                                            <span class="checkbox__text">
-                                                <svg><use xlink:href="#check"></use></svg>
-                                                <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
-                                            </span>
-                                        </label>
+                        <div class="col-md-6">
+                            <div class="gift-form__wrapper">
+                                <div class="gift-form">
+                                    <div class="title-h30 font-medium gift-form__title">Дарим 30&nbsp;000&nbsp;<span class="d-lg-none">₽</span><span class="d-none d-lg-inline">рублей</span><br> на шопинг</div>
+                                    <img class="gift-form__decor" src="assets/img/gift-form-decor.png" alt="decor">
+                                    <div class="gift-grid">
+                                        <form class="gift-form__fields">
+                                            <input type="text" class="form-input" placeholder="Имя фамилия">
+                                            <input type="tel" class="form-input js-tel" placeholder="Телефон">
+                                            <input type="email" class="form-input" placeholder="Email">
+                                            <label class="checkbox">
+                                                <input type="checkbox" checked>
+                                                <span class="checkbox__text">
+                                                    <svg><use xlink:href="#check"></use></svg>
+                                                    <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
+                                                </span>
+                                            </label>
             
-                                        <button class="button button-primary">Получить именной сертификат</button>
-                                    </form>
+                                            <div class="gift-info-mobile lh15 font-g">
+                                                Самый легкий и приятный способ подарить себе или вашему близкому человеку именно то, что он хотел.
+                                            </div>
             
-                                    <div class="gift-info lh15 font-g">Самый легкий и приятный способ подарить себе или вашему близкому человеку именно то, что он хотел.</div>
+                                            <button class="button button-primary">Получить именной сертификат</button>
+                                        </form>
+            
+                                        <div class="gift-info lh15 font-g">Самый легкий и приятный способ подарить себе или вашему близкому человеку именно то, что он хотел.</div>
+                                    </div>
+            
                                 </div>
-            
                             </div>
                         </div>
                     </div>
@@ -313,19 +348,19 @@
                 <div class="container">
                     <div class="views-grid" style="background-image: url('assets/img/views-bg.jpg')">
                         <div class="row row-gap-40">
-                            <div class="col-lg-8">
+                            <div class="col-md-8 order-3 order-md-1">
                                 <div class="views-picture" style="background-image: url('assets/img/views-4.jpg')"></div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-md-4 order-1 order-md-2">
                                 <div class="views-title">
                                     <div class="views-decor" style="background-image: url('assets/img/circled-lines.gif');"></div>
-                                    <div class="title-h1 font-extralight upp tac">Образы в отпуск</div>
+                                    <div class="title-h1 views-title-content-right font-extralight upp tac">Образы в отпуск</div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-md-4 order-3 order-md-3">
                                 <div class="views-picture" style="background-image: url('assets/img/views-5.jpg')"></div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-md-8 order-4 order-md-4">
                                 <div class="views-picture" style="background-image: url('assets/img/views-6.jpg')"></div>
                             </div>
                         </div>
@@ -338,17 +373,17 @@
                         удобным для вас способом</div>
             
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <div class="feed-decor__wrapper">
                                 <img src="assets/img/feed-decor.png" alt="Feed">
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <form class="feed-form">
                                 <div class="feed-form__header">
-                                    <div class="title-h3 font-medium">Введите ваши данные<br>
+                                    <div class="title-h30 font-medium">Введите ваши данные<br>
                                         в форму ниже</div>
-                                    <div class="text font-g">и получите консультацию +<br>
+                                    <div class="text font-g">и получите консультацию +<br class="d-none d-xl-inline">
                                         каталог моделей</div>
                                     <div class="text font-gbold">Выберите способ связи:</div>
                                 </div>
@@ -359,21 +394,29 @@
                                             <input type="radio" name="connection-type" checked>
                                             <span class="radio__text">
                                                 <svg><use xlink:href="#phone"></use></svg>
-                                                <span>Звонок</span>
+                                                <span>
+                                                    Звонок
+                                                </span>
                                             </span>
                                         </label>
                                         <label class="radio">
                                             <input type="radio" name="connection-type">
                                             <span class="radio__text">
                                                 <svg><use xlink:href="#ws"></use></svg>
-                                                <span>WhatsApp</span>
+                                                <span>
+                                                    <span class="radio-mobile-text">WA</span>
+                                                    <span class="radio-desktop-text">WhatsApp</span>
+                                                </span>
                                             </span>
                                         </label>
                                         <label class="radio">
                                             <input type="radio" name="connection-type">
                                             <span class="radio__text">
                                                 <svg><use xlink:href="#tg-1"></use></svg>
-                                                <span>Телеграм</span>
+                                                <span>
+                                                    <span class="radio-desktop-text">Телеграм</span>
+                                                    <span class="radio-mobile-text">TG</span>
+                                                </span>
                                             </span>
                                         </label>
                                     </div>
@@ -391,15 +434,15 @@
                                     </div>
                                 </div>
             
-                                <button class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА ПЕРВЫЙ ЗАКАЗ</button>
+                                <button class="button button-primary w-xs-100">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
                             </form>
                         </div>
                     </div>
                     <div class="feed-footer">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-md-5 col-xl-4">
                                 <div class="scheme">
-                                    <div class="title-h3">
+                                    <div class="title-h30">
                                         <span class="font-bold">Всего за 1 приезд</span><br>
                                         <span class="font-extralight">вы сможете подобрать
                                         полный гардероб
@@ -412,7 +455,7 @@
                                 </div>
                             </div>
             
-                            <div class="col-lg-8">
+                            <div class="col-md-7 col-xl-8">
                                 <div class="meeting" style="background-image: url('assets/img/meeting-bg.jpg')">
                                     <button data-fancybox data-src="https://youtu.be/XPpTgCho5ZA?si=llmg-bFqmHMxKgyk" class="meeting-button">
                                         <svg><use xlink:href="#play"></use></svg>
@@ -434,30 +477,30 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4">
+                    <div class="row row-gap-60">
+                        <div class="col-md-4">
                             <div class="advantage">
                                 <img class="advantage__picture" src="assets/img/advantage-1.jpg" alt="Advantage">
-                                <div class="advantage__title font-medium title-h3">Натуральные<br> материалы</div>
+                                <div class="advantage__title font-medium title-h30">Натуральные<br> материалы</div>
                                 <div class="advantage__info font-g text">Все модели выполнены из<br>
                                     благородных и <span class="font-gbold">натуральных материалов:<br>
                                     хлопок, лен, кашемир, кожа.</span></div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="advantage">
                                 <img class="advantage__picture" src="assets/img/advantage-2.jpg" alt="Advantage">
-                                <div class="advantage__title font-medium title-h3">Европейский<br> стиль</div>
+                                <div class="advantage__title font-medium title-h30">Европейский<br> стиль</div>
                                 <div class="advantage__info font-g text">
                                     <span class="font-gbold">Наши клиенты всегда в центре внимания.</span><br>
                                     Безупречные изделия, созданные признанными мастерами из&nbsp;Европы.
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="advantage">
                                 <img class="advantage__picture" src="assets/img/advantage-3.jpg" alt="Advantage">
-                                <div class="advantage__title font-medium title-h3">Эксклюзивность<br> и&nbsp;уникальность</div>
+                                <div class="advantage__title font-medium title-h30">Эксклюзивность<br> и&nbsp;уникальность</div>
                                 <div class="advantage__info font-g text">
                                     Каждое изделие имеет  уникальный номер, указанный на этикетке.
                                 </div>
@@ -469,7 +512,7 @@
             <section id="escort" class="escort section-padding-1 pb-0 cv section-mb-2" style="background-image: url('assets/img/feed-bg.jpg')">
                 <div class="container">
                     <div class="title-h3 font-extralight tac upp title-mb-2">Шопинг сопровождение</div>
-                    <div class="text font-g tac title-mb-1">Наши стилисты помогут вам подобрать безупречные образы в отпуск или для<br>
+                    <div class="text font-g tac title-mb-1 lh14">Наши стилисты помогут вам подобрать безупречные образы в отпуск или для<br>
                         повседневной носки, подчеркивающий вашу индивидуальность.</div>
             
                     <div class="slider-wrapper">
@@ -510,30 +553,33 @@
                             <input type="checkbox" checked>
                             <span class="checkbox__text">
                                 <svg><use xlink:href="#check"></use></svg>
-                                <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
+                                <span>Принимаю условия<br class="d-none d-md-inline d-xl-none"> <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
                             </span>
                         </label>
             
-                        <button class="button button-primary">Записаться на шопинг сопровождение</button>
+                        <button class="button button-primary">Записаться на<br class="d-none d-md-inline d-lg-none"> шопинг сопровождение</button>
                     </form>
                 </div>
-                <div class="section-padding-1" id="likes">
+                <div class="section-padding-1 pb-0" id="likes">
                     <div class="container">
-                        <div class="title-h3 font-extralight tac upp title-mb-2">Возможно, вы сохраняете фото с<br>
+                        <div class="likes-title title-h3 font-extralight tac upp title-mb-2">Возможно, вы сохраняете фото с<br class="d-none d-md-inline">
                             понравившимися образами?</div>
-                        <div class="text font-g tac">Пришлите фотографии WhatsApp или TG и мы, уверены, что наш стилист соберет вам<br>
+                        <div class="likes-subtitle d-none d-sm-inline text font-g tac lh14">Пришлите фотографии WhatsApp или TG и мы, уверены, что наш стилист соберет вам<br>
                             похожие образы из нашей коллекции, учитывая ваш размер.</div>
             
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                                 <div class="likes-picture__wrapper">
-                                    <img src="assets/img/likes-picture.png" alt="Likes">
+                                    <img class="likes-picture-mobile-picture" src="assets/img/likes-picture-mobile.png" alt="Likes">
+                                    <img class="likes-picture-desktop-picture" src="assets/img/likes-picture.png" alt="Likes">
+                                    <div class="likes-picture__text font-g">Пришлите фотографии W или TG и мы, уверены, что наш стилист соберет вам
+                                        похожие образы из нашей коллекции, учитывая ваш размер.</div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                                 <div class="likes__in">
-                                    <div class="title-h3 font-medium title-mb-2">Вещи будут ждать уже вас в примерочной.</div>
-                                    <div class="font-gbold title-mb-3">Выберите способ связи:</div>
+                                    <div class="title-h30 font-medium title-mb-2">Вещи будут ждать уже вас в&nbsp;примерочной.</div>
+                                    <div class="font-gbold title-mb-3 text">Выберите способ связи:</div>
                                     <div class="likes__buttons title-mb-0">
                                         <a href="#" class="likes-button" style="background-color: #43D854;">
                                             <svg><use xlink:href="#ws"></use></svg>
@@ -545,7 +591,7 @@
                                         </a>
                                     </div>
             
-                                    <div class="text font-g lh14">Мы&nbsp;поможем Вам создать безупречные образы для отпуска или<br>
+                                    <div class="likes-descr text font-g lh14">Мы&nbsp;поможем Вам создать безупречные образы для отпуска или<br>
                                         для повседневного гардероба, подходящие для любого случая<br>
                                         и&nbsp;непременно отражающие вашу индивидуальность.</div>
                                 </div>
@@ -557,9 +603,11 @@
             </section>
             <section id="sales" class="sales section-with-title section-mb-2">
                 <div class="container">
-                    <div class="section-title title-h3 flex-center js-sales-section-title">
-                        <div class="section-title-decor"></div>
-                        <span>Сезонная распродажа</span>
+                    <div class="section-title__wrapper">
+                        <div class="section-title title-h3 flex-center js-sales-section-title">
+                            <div class="section-title-decor"></div>
+                            <span>Сезонная распродажа</span>
+                        </div>
                     </div>
                     <div class="slider-wrapper">
                         <div class="slider">
@@ -588,7 +636,7 @@
                                                     </div>
                                                 </form>
                                             </div>
-                                            <div class="sale__title font-medium title-h3">Женское полупальто ESCALES</div>
+                                            <div class="sale__title font-medium title-h30">Женское полупальто ESCALES</div>
                                             <div class="sale__subtitle title-h5 mb-2">Откройте для себя пальто Escales Pea Coat</div>
                                             <div class="sale__price font-g">
                                                 <span class="font-gbold title-h5">510,00 €</span>
@@ -619,7 +667,7 @@
                                                     </div>
                                                 </form>
                                             </div>
-                                            <div class="sale__title font-medium title-h3">Женское поло Officier из пике</div>
+                                            <div class="sale__title font-medium title-h30">Женское поло Officier из пике</div>
                                             <div class="sale__subtitle title-h5 mb-2">Поло с длинным рукавом, из хлопковой ткани</div>
                                             <div class="sale__price font-g">
                                                 <span class="font-gbold title-h5">110,00 €</span>
@@ -650,7 +698,7 @@
                                                     </div>
                                                 </form>
                                             </div>
-                                            <div class="sale__title font-medium title-h3">Кардиган<br>
+                                            <div class="sale__title font-medium title-h30">Кардиган<br>
                                                 Câble</div>
                                             <div class="sale__subtitle title-h5 mb-2">Кардиган с узором «косы», хлопковая пряжа</div>
                                             <div class="sale__price font-g">
@@ -680,27 +728,49 @@
             </section>
             
             <section id="contacts" class="contacts">
-                <div class="container">
-                    <div class="contacts-in">
-                        <div class="row">
-                            <div class="col-lg-1">1</div>
-                            <div class="col-lg-4">ss</div>
+                <div class="contacts-top" style="background-image: url('assets/img/map.jpg');"></div>
+                <div class="contacts-pictures">
+                    <div class="contacts-pictures__in">
+                        <div class="contacts-bg" style="background-image: url('assets/img/contacts-bg.jpg');"></div>
+            <!--            <div class="contacts-store" style="background-image: url('assets/img/store.jpg');"></div>-->
+            <!--            <div class="contacts-map" style="background-image: url('assets/img/map.jpg');"></div>-->
+                        <div class="contacts-mark">
+                            <svg width="120" height="50">
+                                <use xlink:href="#logo"></use>
+                            </svg>
+            
+                            <div class="contacts-mark__placemark">
+                                <svg>
+                                    <use xlink:href="#mark"></use>
+                                </svg>
+                                <span></span>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="contacts-bottom">
+                    <div class="container">
+                    <div class="contacts-in">
                         <div class="contacts-info__wrapper">
                             <div class="contacts-info">
-                                <div class="title-h3 upp font-extralight">Приезжайте к нам на чашечку кофе</div>
+                                <button class="contacts-button js-toggle-contacts">
+                                    <svg>
+                                        <use xlink:href="#chevron-left"></use>
+                                    </svg>
+                                </button>
+                                <div class="title-h3 upp font-extralight">Приезжайте к нам<br class="d-lg-inline d-xl-none"> на чашечку кофе</div>
                                 <div class="contacts-grid">
                                     <div class="contacts-grid__item">
-                                        <div class="title-h3 font-medium title-mb-3">Наш адрес</div>
+                                        <div class="title-h30 font-medium title-mb-3">Наш адрес</div>
                                         <div class="text lh13 font-g">143402, 66 км МКАД, Московская обл.,<br>
                                             г. Красногорск ул. Международная д. 8,</div>
                                     </div>
                                     <div class="contacts-grid__item">
-                                        <div class="title-h3 font-medium title-mb-3">Телефон</div>
+                                        <div class="title-h30 font-medium title-mb-3">Телефон</div>
                                         <a href="tel:+7 (000) 000-00-00" class="text lh13 font-g">+7 (000) 000-00-00</a>
                                     </div>
                                     <div class="contacts-grid__item">
-                                        <div class="title-h3 font-medium title-mb-3">E-mail</div>
+                                        <div class="title-h30 font-medium title-mb-3">E-mail</div>
                                         <a href="tel:+7 (000) 000-00-00" class="text lh13 font-g">info@escales.ru</a>
                                     </div>
                                 </div>
@@ -746,11 +816,20 @@
                                         <svg><use xlink:href="#contacts-10-1"></use></svg>
                                     </a>
                                 </div>
-            
+                                <div class="contacts-mobile-map">
+                                    <img src="assets/img/map-1.jpg" alt="Mobile map">
+                                    <div class="contacts-mark__placemark">
+                                        <svg>
+                                            <use xlink:href="#mark"></use>
+                                        </svg>
+                                        <span></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
             
+                </div>
                 </div>
             </section>
             
@@ -953,7 +1032,7 @@
                 </clipPath>
             </defs>
         </symbol>
-        <symbol id="contacts-4" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="contacts-4" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_374_175)">
                 <path d="M11.5942 1.38465C7.69021 2.56172 4.47823 5.18892 2.54989 8.78235C0.621483 12.3757 0.20756 16.5051 1.38447 20.4098C3.37271 27.0068 9.44883 31.2731 16.008 31.273C17.4632 31.2728 18.9426 31.0629 20.4059 30.6216C24.3099 29.4446 27.522 26.8173 29.4503 23.2239C31.3786 19.6306 31.7926 15.5012 30.6157 11.5965C29.4388 7.69177 26.8122 4.47909 23.2196 2.5503C19.627 0.621441 15.4984 0.207437 11.5942 1.38465ZM11.5942 1.38465L11.6106 1.43867" stroke="#B59F62" stroke-width="1.5"/>
                 <path d="M10.9344 5.81836C7.71251 5.81836 5.09131 8.43961 5.09131 11.6614C5.09131 14.8833 7.71251 17.5045 10.9344 17.5045C14.1563 17.5045 16.7775 14.8833 16.7775 11.6614C16.7775 8.43961 14.1563 5.81836 10.9344 5.81836ZM10.9344 16.6643C8.17581 16.6643 5.93157 14.42 5.93157 11.6614C5.93157 8.90286 8.17585 6.65862 10.9344 6.65862C13.6929 6.65862 15.9372 8.9029 15.9372 11.6614C15.9372 14.42 13.693 16.6643 10.9344 16.6643Z" fill="#B59F62"/>
@@ -1181,9 +1260,6 @@
             </defs>
         </symbol>
     
-    
-    
-    
         <symbol id="button-up" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_b_382_872)">
                 <circle cx="25" cy="25" r="25" fill="#09468C"/>
@@ -1209,21 +1285,65 @@
             </defs>
         </symbol>
     
+        <symbol id="mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="8.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>
+        </symbol>
     
+    <!--    <symbol id="mark" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <circle cx="30" cy="30" r="26.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>-->
+    <!--    </symbol>-->
+    <!--    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <circle cx="35" cy="35" r="26.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>-->
+    <!--        <circle opacity="0.5" cx="35" cy="35" r="25" stroke="#3586D6" stroke-width="20"/>-->
+    <!--    </svg>-->
+    <!--    <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <circle cx="44" cy="44" r="26.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>-->
+    <!--        <circle opacity="0.35" cx="44" cy="44" r="34" stroke="#3586D6" stroke-width="20"/>-->
+    <!--    </svg>-->
+    <!--    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <circle cx="55" cy="55" r="26.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>-->
+    <!--        <circle opacity="0.25" cx="55" cy="55" r="53.5" stroke="#3586D6" stroke-width="3"/>-->
+    <!--    </svg>-->
+    <!--    <svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <circle cx="71" cy="71" r="26.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>-->
+    <!--        <circle opacity="0.15" cx="71" cy="71" r="70" stroke="#3586D6" stroke-width="2"/>-->
+    <!--    </svg>-->
+    <!--    <svg width="170" height="170" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--        <circle cx="85" cy="85" r="26.5" fill="#09468C" stroke="#3586D6" stroke-width="7"/>-->
+    <!--        <circle opacity="0.05" cx="85" cy="85" r="84.5" stroke="#3586D6"/>-->
+    <!--    </svg>-->
     
+        <symbol id="burger" viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="30" height="3" rx="1.5" fill="white"/>
+            <rect y="8" width="30" height="3" rx="1.5" fill="white"/>
+            <rect y="16" width="30" height="3" rx="1.5" fill="white"/>
+        </symbol>
+        <symbol id="cross" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2.4541" y="0.832733" width="30" height="3" rx="1.5" transform="rotate(45 2.4541 0.832733)" fill="white"/>
+            <rect width="30" height="3" rx="1.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 21.546 0.832733)" fill="white"/>
+        </symbol>
     
+        <symbol id="phone" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_422_173)">
+                <path d="M5.07893 0.00354528L4.47895 0.0277915C4.09053 0.0516889 3.71092 0.154784 3.36299 0.330866C3.03756 0.517044 2.7405 0.749791 2.48102 1.02188C2.12103 1.36435 1.91704 1.66137 1.69804 1.94929C0.588446 3.40679 -0.00898001 5.19618 0.000102038 7.03489C0.00610183 8.51996 0.390088 9.96563 0.990068 11.3173C2.21703 14.0511 4.23596 16.9455 6.89987 19.6277C7.54184 20.2732 8.17183 20.9218 8.8498 21.5249C12.1599 24.4692 16.1043 26.5925 20.3694 27.7259L22.0734 27.9895C22.6283 28.0198 23.1833 27.9774 23.7413 27.9501C24.615 27.9046 25.4681 27.6656 26.2402 27.25C26.6331 27.0456 27.0165 26.8231 27.3892 26.5833C27.3892 26.5833 27.5182 26.4984 27.7642 26.3105C28.1691 26.0074 28.4181 25.7922 28.7541 25.4376C29.0031 25.177 29.2191 24.8709 29.3841 24.5223C29.6181 24.0283 29.8521 23.0858 29.9481 22.3008C30.0201 21.7007 29.9991 21.3734 29.9901 21.1703C29.9781 20.846 29.7111 20.5096 29.4201 20.3672L27.6742 19.5762C27.6742 19.5762 25.0642 18.4275 23.4683 17.6941C23.3013 17.6204 23.1224 17.5783 22.9403 17.5698C22.7351 17.5485 22.5277 17.5718 22.3321 17.6382C22.1365 17.7046 21.9572 17.8125 21.8064 17.9547C21.7914 17.9486 21.5904 18.1214 19.4214 20.7763C19.297 20.9453 19.1255 21.0731 18.9289 21.1432C18.7323 21.2134 18.5194 21.2228 18.3175 21.1703C18.1221 21.1174 17.9306 21.0505 17.7445 20.9703C17.3725 20.8127 17.2435 20.7521 16.9885 20.643C15.2668 19.8839 13.6727 18.8583 12.2637 17.6031C11.8857 17.2698 11.5347 16.9061 11.1747 16.5545C9.99452 15.4126 8.96597 14.1208 8.11482 12.7115L7.93783 12.4236C7.8107 12.2301 7.70792 12.0214 7.63184 11.8023C7.51785 11.3567 7.81484 10.9991 7.81484 10.9991C7.81484 10.9991 8.54381 10.1929 8.8828 9.75651C9.21279 9.3322 9.49178 8.92003 9.67177 8.62604C10.0258 8.0502 10.1368 7.4592 9.95076 7.00156C9.11079 4.92852 8.24082 2.86458 7.34685 0.815787C7.16986 0.409666 6.64488 0.118713 6.16789 0.0611288C6.0059 0.0429443 5.8439 0.0247604 5.68191 0.0126374C5.27904 -0.00758335 4.87534 -0.00353508 4.47295 0.0247605L5.07893 0.00354528Z" fill="white"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_422_173">
+                    <rect width="30" height="28" fill="white"/>
+                </clipPath>
+            </defs>
+        </symbol>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        <symbol id="geo" viewBox="0 0 17 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_422_192)">
+                <path d="M8.5 0C3.81336 0 8.6534e-05 3.9479 8.6534e-05 8.7945C-0.0307257 15.884 8.177 21.7624 8.5 22C8.5 22 17.0307 15.884 16.9999 8.8C16.9999 3.9479 13.1866 0 8.5 0ZM8.5 13.2C6.1519 13.2 4.25004 11.231 4.25004 8.8C4.25004 6.369 6.1519 4.4 8.5 4.4C10.8481 4.4 12.75 6.369 12.75 8.8C12.75 11.231 10.8481 13.2 8.5 13.2Z" fill="#044881"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_422_192">
+                    <rect width="17" height="22" fill="white"/>
+                </clipPath>
+            </defs>
+        </symbol>
     
     
     

@@ -1,6 +1,30 @@
 <section id="offer" class="offer section-mb-3" style="background-image: url('{{root}}assets/img/offer-1.jpg');">
     <div class="offer-lines" style="background-image: url('{{root}}assets/img/circled-lines.gif');"></div>
+
     {{> header }}
+
+    <div class="offer-slide">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-lg-8 col-11">
+                    <div class="offer-info">
+                        <div class="offer-info__text">
+                            <div class="title-h2 font-medium">Европейский бутик с коллекцией<br class="d-none d-md-inline">
+                                2024 года в&nbsp;1&nbsp;минуте от&nbsp;МКАД</div>
+                            <div class="text font-g">Более 700 безупречных<br class="d-md-none"> образов <span class="font-gbold">для работы и отдыха</span></div>
+                        </div>
+
+                        <button class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-1 h-100">
+                    <div class="offer-picture__wrapper">
+                        <img src="{{root}}assets/img/offer-0-2.png" alt="offer picture">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section id="hits" class="hits section-with-title section-mb-1">
     <div class="container">
@@ -68,19 +92,19 @@
     <div class="container">
         <div class="views-grid" style="background-image: url('{{root}}assets/img/views-bg.jpg')">
             <div class="row row-gap-40">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="views-title">
                         <div class="views-decor" style="background-image: url('{{root}}assets/img/circled-lines.gif');"></div>
-                        <div class="title-h1 font-extralight upp tac">Повседневные образы</div>
+                        <div class="title-h1 views-title-content-left font-extralight upp tac">Повседневные образы</div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="views-picture" style="background-image: url('{{root}}assets/img/views-1.jpg')"></div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-md-8">
                     <div class="views-picture" style="background-image: url('{{root}}assets/img/views-2.jpg')"></div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     <div class="views-picture" style="background-image: url('{{root}}assets/img/views-3.jpg')"></div>
                 </div>
             </div>
@@ -90,34 +114,40 @@
 <section class="section-mb-3 gift" style="background-image: url('{{root}}assets/img/gift-bg.jpg');">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 <div class="gift-girl__wrapper">
                     <img src="{{root}}assets/img/gift-girl.png" alt="Girl">
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="gift-form">
-                    <div class="title-h3 font-medium gift-form__title">Дарим 30&nbsp;000 рублей<br> на шопинг</div>
-                    <img class="gift-form__decor" src="{{root}}assets/img/gift-form-decor.png" alt="decor">
-                    <div class="gift-grid">
-                        <form class="gift-form__fields">
-                            <input type="text" class="form-input" placeholder="Имя фамилия">
-                            <input type="tel" class="form-input js-tel" placeholder="Телефон">
-                            <input type="email" class="form-input" placeholder="Email">
-                            <label class="checkbox">
-                                <input type="checkbox" checked>
-                                <span class="checkbox__text">
-                                    <svg><use xlink:href="#check"></use></svg>
-                                    <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
-                                </span>
-                            </label>
+            <div class="col-md-6">
+                <div class="gift-form__wrapper">
+                    <div class="gift-form">
+                        <div class="title-h30 font-medium gift-form__title">Дарим 30&nbsp;000&nbsp;<span class="d-lg-none">₽</span><span class="d-none d-lg-inline">рублей</span><br> на шопинг</div>
+                        <img class="gift-form__decor" src="{{root}}assets/img/gift-form-decor.png" alt="decor">
+                        <div class="gift-grid">
+                            <form class="gift-form__fields">
+                                <input type="text" class="form-input" placeholder="Имя фамилия">
+                                <input type="tel" class="form-input js-tel" placeholder="Телефон">
+                                <input type="email" class="form-input" placeholder="Email">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox__text">
+                                        <svg><use xlink:href="#check"></use></svg>
+                                        <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
+                                    </span>
+                                </label>
 
-                            <button class="button button-primary">Получить именной сертификат</button>
-                        </form>
+                                <div class="gift-info-mobile lh15 font-g">
+                                    Самый легкий и приятный способ подарить себе или вашему близкому человеку именно то, что он хотел.
+                                </div>
 
-                        <div class="gift-info lh15 font-g">Самый легкий и приятный способ подарить себе или вашему близкому человеку именно то, что он хотел.</div>
+                                <button class="button button-primary">Получить именной сертификат</button>
+                            </form>
+
+                            <div class="gift-info lh15 font-g">Самый легкий и приятный способ подарить себе или вашему близкому человеку именно то, что он хотел.</div>
+                        </div>
+
                     </div>
-
                 </div>
             </div>
         </div>
@@ -128,19 +158,19 @@
     <div class="container">
         <div class="views-grid" style="background-image: url('{{root}}assets/img/views-bg.jpg')">
             <div class="row row-gap-40">
-                <div class="col-lg-8">
+                <div class="col-md-8 order-3 order-md-1">
                     <div class="views-picture" style="background-image: url('{{root}}assets/img/views-4.jpg')"></div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4 order-1 order-md-2">
                     <div class="views-title">
                         <div class="views-decor" style="background-image: url('{{root}}assets/img/circled-lines.gif');"></div>
-                        <div class="title-h1 font-extralight upp tac">Образы в отпуск</div>
+                        <div class="title-h1 views-title-content-right font-extralight upp tac">Образы в отпуск</div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-md-4 order-3 order-md-3">
                     <div class="views-picture" style="background-image: url('{{root}}assets/img/views-5.jpg')"></div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-md-8 order-4 order-md-4">
                     <div class="views-picture" style="background-image: url('{{root}}assets/img/views-6.jpg')"></div>
                 </div>
             </div>
@@ -153,17 +183,17 @@
             удобным для вас способом</div>
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 <div class="feed-decor__wrapper">
                     <img src="{{root}}assets/img/feed-decor.png" alt="Feed">
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 <form class="feed-form">
                     <div class="feed-form__header">
-                        <div class="title-h3 font-medium">Введите ваши данные<br>
+                        <div class="title-h30 font-medium">Введите ваши данные<br>
                             в форму ниже</div>
-                        <div class="text font-g">и получите консультацию +<br>
+                        <div class="text font-g">и получите консультацию +<br class="d-none d-xl-inline">
                             каталог моделей</div>
                         <div class="text font-gbold">Выберите способ связи:</div>
                     </div>
@@ -174,21 +204,29 @@
                                 <input type="radio" name="connection-type" checked>
                                 <span class="radio__text">
                                     <svg><use xlink:href="#phone"></use></svg>
-                                    <span>Звонок</span>
+                                    <span>
+                                        Звонок
+                                    </span>
                                 </span>
                             </label>
                             <label class="radio">
                                 <input type="radio" name="connection-type">
                                 <span class="radio__text">
                                     <svg><use xlink:href="#ws"></use></svg>
-                                    <span>WhatsApp</span>
+                                    <span>
+                                        <span class="radio-mobile-text">WA</span>
+                                        <span class="radio-desktop-text">WhatsApp</span>
+                                    </span>
                                 </span>
                             </label>
                             <label class="radio">
                                 <input type="radio" name="connection-type">
                                 <span class="radio__text">
                                     <svg><use xlink:href="#tg-1"></use></svg>
-                                    <span>Телеграм</span>
+                                    <span>
+                                        <span class="radio-desktop-text">Телеграм</span>
+                                        <span class="radio-mobile-text">TG</span>
+                                    </span>
                                 </span>
                             </label>
                         </div>
@@ -206,15 +244,15 @@
                         </div>
                     </div>
 
-                    <button class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА ПЕРВЫЙ ЗАКАЗ</button>
+                    <button class="button button-primary w-xs-100">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
                 </form>
             </div>
         </div>
         <div class="feed-footer">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-md-5 col-xl-4">
                     <div class="scheme">
-                        <div class="title-h3">
+                        <div class="title-h30">
                             <span class="font-bold">Всего за 1 приезд</span><br>
                             <span class="font-extralight">вы сможете подобрать
                             полный гардероб
@@ -227,7 +265,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-8">
+                <div class="col-md-7 col-xl-8">
                     <div class="meeting" style="background-image: url('{{root}}assets/img/meeting-bg.jpg')">
                         <button data-fancybox data-src="https://youtu.be/XPpTgCho5ZA?si=llmg-bFqmHMxKgyk" class="meeting-button">
                             <svg><use xlink:href="#play"></use></svg>
@@ -249,30 +287,30 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
+        <div class="row row-gap-60">
+            <div class="col-md-4">
                 <div class="advantage">
                     <img class="advantage__picture" src="{{root}}assets/img/advantage-1.jpg" alt="Advantage">
-                    <div class="advantage__title font-medium title-h3">Натуральные<br> материалы</div>
+                    <div class="advantage__title font-medium title-h30">Натуральные<br> материалы</div>
                     <div class="advantage__info font-g text">Все модели выполнены из<br>
                         благородных и <span class="font-gbold">натуральных материалов:<br>
                         хлопок, лен, кашемир, кожа.</span></div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="advantage">
                     <img class="advantage__picture" src="{{root}}assets/img/advantage-2.jpg" alt="Advantage">
-                    <div class="advantage__title font-medium title-h3">Европейский<br> стиль</div>
+                    <div class="advantage__title font-medium title-h30">Европейский<br> стиль</div>
                     <div class="advantage__info font-g text">
                         <span class="font-gbold">Наши клиенты всегда в центре внимания.</span><br>
                         Безупречные изделия, созданные признанными мастерами из&nbsp;Европы.
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="advantage">
                     <img class="advantage__picture" src="{{root}}assets/img/advantage-3.jpg" alt="Advantage">
-                    <div class="advantage__title font-medium title-h3">Эксклюзивность<br> и&nbsp;уникальность</div>
+                    <div class="advantage__title font-medium title-h30">Эксклюзивность<br> и&nbsp;уникальность</div>
                     <div class="advantage__info font-g text">
                         Каждое изделие имеет  уникальный номер, указанный на этикетке.
                     </div>
@@ -284,7 +322,7 @@
 <section id="escort" class="escort section-padding-1 pb-0 cv section-mb-2" style="background-image: url('{{root}}assets/img/feed-bg.jpg')">
     <div class="container">
         <div class="title-h3 font-extralight tac upp title-mb-2">Шопинг сопровождение</div>
-        <div class="text font-g tac title-mb-1">Наши стилисты помогут вам подобрать безупречные образы в отпуск или для<br>
+        <div class="text font-g tac title-mb-1 lh14">Наши стилисты помогут вам подобрать безупречные образы в отпуск или для<br>
             повседневной носки, подчеркивающий вашу индивидуальность.</div>
 
         <div class="slider-wrapper">
@@ -325,30 +363,33 @@
                 <input type="checkbox" checked>
                 <span class="checkbox__text">
                     <svg><use xlink:href="#check"></use></svg>
-                    <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
+                    <span>Принимаю условия<br class="d-none d-md-inline d-xl-none"> <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
                 </span>
             </label>
 
-            <button class="button button-primary">Записаться на шопинг сопровождение</button>
+            <button class="button button-primary">Записаться на<br class="d-none d-md-inline d-lg-none"> шопинг сопровождение</button>
         </form>
     </div>
-    <div class="section-padding-1" id="likes">
+    <div class="section-padding-1 pb-0" id="likes">
         <div class="container">
-            <div class="title-h3 font-extralight tac upp title-mb-2">Возможно, вы сохраняете фото с<br>
+            <div class="likes-title title-h3 font-extralight tac upp title-mb-2">Возможно, вы сохраняете фото с<br class="d-none d-md-inline">
                 понравившимися образами?</div>
-            <div class="text font-g tac">Пришлите фотографии WhatsApp или TG и мы, уверены, что наш стилист соберет вам<br>
+            <div class="likes-subtitle d-none d-sm-inline text font-g tac lh14">Пришлите фотографии WhatsApp или TG и мы, уверены, что наш стилист соберет вам<br>
                 похожие образы из нашей коллекции, учитывая ваш размер.</div>
 
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="likes-picture__wrapper">
-                        <img src="{{root}}assets/img/likes-picture.png" alt="Likes">
+                        <img class="likes-picture-mobile-picture" src="{{root}}assets/img/likes-picture-mobile.png" alt="Likes">
+                        <img class="likes-picture-desktop-picture" src="{{root}}assets/img/likes-picture.png" alt="Likes">
+                        <div class="likes-picture__text font-g">Пришлите фотографии W или TG и мы, уверены, что наш стилист соберет вам
+                            похожие образы из нашей коллекции, учитывая ваш размер.</div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="likes__in">
-                        <div class="title-h3 font-medium title-mb-2">Вещи будут ждать уже вас в примерочной.</div>
-                        <div class="font-gbold title-mb-3">Выберите способ связи:</div>
+                        <div class="title-h30 font-medium title-mb-2">Вещи будут ждать уже вас в&nbsp;примерочной.</div>
+                        <div class="font-gbold title-mb-3 text">Выберите способ связи:</div>
                         <div class="likes__buttons title-mb-0">
                             <a href="#" class="likes-button" style="background-color: #43D854;">
                                 <svg><use xlink:href="#ws"></use></svg>
@@ -360,7 +401,7 @@
                             </a>
                         </div>
 
-                        <div class="text font-g lh14">Мы&nbsp;поможем Вам создать безупречные образы для отпуска или<br>
+                        <div class="likes-descr text font-g lh14">Мы&nbsp;поможем Вам создать безупречные образы для отпуска или<br>
                             для повседневного гардероба, подходящие для любого случая<br>
                             и&nbsp;непременно отражающие вашу индивидуальность.</div>
                     </div>
@@ -372,9 +413,11 @@
 </section>
 <section id="sales" class="sales section-with-title section-mb-2">
     <div class="container">
-        <div class="section-title title-h3 flex-center js-sales-section-title">
-            <div class="section-title-decor"></div>
-            <span>Сезонная распродажа</span>
+        <div class="section-title__wrapper">
+            <div class="section-title title-h3 flex-center js-sales-section-title">
+                <div class="section-title-decor"></div>
+                <span>Сезонная распродажа</span>
+            </div>
         </div>
         <div class="slider-wrapper">
             <div class="slider">
@@ -386,7 +429,7 @@
                                     {{> sale-form }}
 
                                 </div>
-                                <div class="sale__title font-medium title-h3">Женское полупальто ESCALES</div>
+                                <div class="sale__title font-medium title-h30">Женское полупальто ESCALES</div>
                                 <div class="sale__subtitle title-h5 mb-2">Откройте для себя пальто Escales Pea Coat</div>
                                 <div class="sale__price font-g">
                                     <span class="font-gbold title-h5">510,00 €</span>
@@ -400,7 +443,7 @@
                                     {{> sale-form }}
 
                                 </div>
-                                <div class="sale__title font-medium title-h3">Женское поло Officier из пике</div>
+                                <div class="sale__title font-medium title-h30">Женское поло Officier из пике</div>
                                 <div class="sale__subtitle title-h5 mb-2">Поло с длинным рукавом, из хлопковой ткани</div>
                                 <div class="sale__price font-g">
                                     <span class="font-gbold title-h5">110,00 €</span>
@@ -414,7 +457,7 @@
                                     {{> sale-form }}
 
                                 </div>
-                                <div class="sale__title font-medium title-h3">Кардиган<br>
+                                <div class="sale__title font-medium title-h30">Кардиган<br>
                                     Câble</div>
                                 <div class="sale__subtitle title-h5 mb-2">Кардиган с узором «косы», хлопковая пряжа</div>
                                 <div class="sale__price font-g">
@@ -444,27 +487,49 @@
 </section>
 
 <section id="contacts" class="contacts">
-    <div class="container">
-        <div class="contacts-in">
-            <div class="row">
-                <div class="col-lg-1">1</div>
-                <div class="col-lg-4">ss</div>
+    <div class="contacts-top" style="background-image: url('{{root}}assets/img/map.jpg');"></div>
+    <div class="contacts-pictures">
+        <div class="contacts-pictures__in">
+            <div class="contacts-bg" style="background-image: url('{{root}}assets/img/contacts-bg.jpg');"></div>
+<!--            <div class="contacts-store" style="background-image: url('{{root}}assets/img/store.jpg');"></div>-->
+<!--            <div class="contacts-map" style="background-image: url('{{root}}assets/img/map.jpg');"></div>-->
+            <div class="contacts-mark">
+                <svg width="120" height="50">
+                    <use xlink:href="#logo"></use>
+                </svg>
+
+                <div class="contacts-mark__placemark">
+                    <svg>
+                        <use xlink:href="#mark"></use>
+                    </svg>
+                    <span></span>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="contacts-bottom">
+        <div class="container">
+        <div class="contacts-in">
             <div class="contacts-info__wrapper">
                 <div class="contacts-info">
-                    <div class="title-h3 upp font-extralight">Приезжайте к нам на чашечку кофе</div>
+                    <button class="contacts-button js-toggle-contacts">
+                        <svg>
+                            <use xlink:href="#chevron-left"></use>
+                        </svg>
+                    </button>
+                    <div class="title-h3 upp font-extralight">Приезжайте к нам<br class="d-lg-inline d-xl-none"> на чашечку кофе</div>
                     <div class="contacts-grid">
                         <div class="contacts-grid__item">
-                            <div class="title-h3 font-medium title-mb-3">Наш адрес</div>
+                            <div class="title-h30 font-medium title-mb-3">Наш адрес</div>
                             <div class="text lh13 font-g">143402, 66 км МКАД, Московская обл.,<br>
                                 г. Красногорск ул. Международная д. 8,</div>
                         </div>
                         <div class="contacts-grid__item">
-                            <div class="title-h3 font-medium title-mb-3">Телефон</div>
+                            <div class="title-h30 font-medium title-mb-3">Телефон</div>
                             <a href="tel:+7 (000) 000-00-00" class="text lh13 font-g">+7 (000) 000-00-00</a>
                         </div>
                         <div class="contacts-grid__item">
-                            <div class="title-h3 font-medium title-mb-3">E-mail</div>
+                            <div class="title-h30 font-medium title-mb-3">E-mail</div>
                             <a href="tel:+7 (000) 000-00-00" class="text lh13 font-g">info@escales.ru</a>
                         </div>
                     </div>
@@ -510,11 +575,20 @@
                             <svg><use xlink:href="#contacts-10-1"></use></svg>
                         </a>
                     </div>
-
+                    <div class="contacts-mobile-map">
+                        <img src="{{root}}assets/img/map-1.jpg" alt="Mobile map">
+                        <div class="contacts-mark__placemark">
+                            <svg>
+                                <use xlink:href="#mark"></use>
+                            </svg>
+                            <span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
+    </div>
     </div>
 </section>
 

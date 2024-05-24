@@ -19,7 +19,7 @@
 
   &__text {
     position: relative;
-    padding-left: calc(22px + 18px);
+    padding-left: calc(18px + 22px);
     cursor: pointer;
     width: 100%;
     min-height: 18px;
@@ -31,9 +31,17 @@
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 
+    @include r($breakpoint-1) {
+      font-size: 12px;
+      padding-left: calc(18px + 12px);
+    }
+
     @include r($breakpoint-2) {
-      min-height: 20px;
-      padding-left: 30px;
+      font-size: 11px;
+    }
+
+    @include r($breakpoint-4) {
+      font-size: 10px;
     }
 
     svg {
@@ -109,6 +117,22 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+
+    .radio-mobile-text {
+      display: none;
+      @include r($breakpoint-3) {
+        display: block;
+      }
+    }
+    .radio-desktop-text {
+      @include r($breakpoint-3) {
+        display: none;
+      }
+    }
+    @include r($breakpoint-4) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
 
     svg {
       width: 20px;

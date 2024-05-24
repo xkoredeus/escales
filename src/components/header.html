@@ -1,55 +1,89 @@
 <header class="header">
     <div class="header-in">
+        <div class="header-mobile-top">
+            <div class="container">
+                <div class="header-mobile-top__in">
+                    <button class="button-geo">
+                        <svg width="17" height="22">
+                            <use xlink:href="#geo"></use>
+                        </svg>
+                    </button>
+                    <div class="header-mobile-top__text"></div>
+                    <div class="header-mobile-top__socials"></div>
+                </div>
+            </div>
+            <span class="header-mobile-top__decor"></span>
+        </div>
         <div class="header-top">
             <div class="container">
                 <div class="header-top__in">
+                    <button class="burger">
+                        <svg width="30" height="19">
+                            <use xlink:href="#burger"></use>
+                        </svg>
+                        <svg width="24" height="25">
+                            <use xlink:href="#cross"></use>
+                        </svg>
+                    </button>
                     <a href="#" class="header-logo">
                         <svg width="210" height="88">
                             <use xlink:href="#logo"></use>
                         </svg>
                     </a>
+                    <a href="tel:88008008080" class="header-phone">
+                        <svg width="30" height="28">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+                    </a>
 
-                    <div class="header-subtitle text3 font-g lh14">
-                    <span>Французская марка одежды для мужчин и женщин в&nbsp;"Крокус&nbsp;Сити&nbsp;Молл" с&nbsp;индивидуальным порядковым
+                    <div class="header-subtitle__wrapper">
+                        <div class="header-subtitle text3 font-g lh14">
+                            <span>Французская марка одежды для мужчин и женщин в&nbsp;"Крокус&nbsp;Сити&nbsp;Молл" с индивидуальным порядковым
                     номером на каждом изделии</span>
+                        </div>
                     </div>
                     <div class="header-info text3 font-g">
                         <div class="header-info__picture" style="background-image: url('{{root}}assets/img/header-map.jpg');"></div>
-                        <div>66 км <span class="font-gbold">МКАД</span>, Московская обл., <br>
+                        <div class="header-info__address">66 км <span class="font-gbold">МКАД</span>, Московская обл., <br>
                             г. Красногорск, <br>
                             ул. Международная, д. 8</div>
                     </div>
 
-                    <div class="header-contacts">
-                        <a href="tel:+7 (000) 000-00-00" class="header-tel font-gbold title-h4">+7 (000) 000-00-00</a>
-                        <div class="text3 font-g">ежедневно с 10:00-22:00</div>
+                    <div class="header-contacts__wrapper">
+                        <div class="header-contacts">
+                            <a href="tel:+7 (000) 000-00-00" class="header-tel font-gbold title-h4">+7 (000) 000-00-00</a>
+                            <div class="text3 font-g">ежедневно с 10:00-22:00</div>
+                        </div>
                     </div>
 
-                    <div class="header-socials socials">
-                        <a href="#" class="socials__icon">
-                            <svg>
-                                <use xlink:href="#ws"></use>
-                            </svg>
-                        </a>
-                        <a href="#" class="socials__icon">
-                            <svg>
-                                <use xlink:href="#tg"></use>
-                            </svg>
-                        </a>
+                    <div class="header-socials__wrapper">
+                        <div class="header-socials socials">
+                            <a href="#" class="socials__icon">
+                                <svg>
+                                    <use xlink:href="#ws"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="socials__icon">
+                                <svg>
+                                    <use xlink:href="#tg"></use>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container header-nav__container">
             <div class="header-nav">
                 <div class="header-nav__decor">
                     <div class="header-nav__decor-in"></div>
                 </div>
-                <a href="#" class="header-nav__link js-button-anchor" data-to="#hits">Хиты сезона</a>
+                <a href="#" class="header-nav__link js-button-anchor" data-to="#hits">Хиты<br class="d-md-inline d-lg-none"> сезона</a>
                 <a href="#" class="header-nav__link js-button-anchor" data-to="#views">Каталог</a>
-                <a href="#" class="header-nav__link js-button-anchor" data-to="#advantages">О магазине</a>
+                <a href="#" class="header-nav__link js-button-anchor" data-to="#advantages">О&nbsp;магазине</a>
                 <a href="#" class="header-nav__link js-button-anchor" data-to="#escort">Шопинг<br> сопровождение</a>
-                <a href="#" class="header-nav__link js-button-anchor" data-to="#likes">Подбор образа<br> по фото</a>
+                <a href="#" class="header-nav__link js-button-anchor" data-to="#likes">Подбор&nbsp;образа<br> по&nbsp;фото</a>
                 <a href="#" class="header-nav__link js-button-anchor" data-to="#sales">Распродажа</a>
                 <a href="#" class="header-nav__link js-button-anchor" data-to="#contacts">Контакты</a>
             </div>
@@ -58,5 +92,7 @@
     </div>
 </header>
 <div id="menu" class="menu">
-
+    <div class="container">
+        <div class="menu__in"></div>
+    </div>
 </div>

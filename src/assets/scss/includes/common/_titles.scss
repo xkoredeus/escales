@@ -1,6 +1,7 @@
 $title-h1: 64px;
 $title-h2: 48px;
 $title-h3: 42px;
+$title-h30: 42px;
 $title-h35: 32px;
 $title-h4: 26px;
 $title-h5: 22px;
@@ -12,25 +13,94 @@ $text3: 14px;
 
 @mixin title-h1 {
   font-size: $title-h1;
+
+  @include r($breakpoint-1) {
+    font-size: 54px;
+  }
+
+  @include r($breakpoint-4) {
+    font-size: 44px;
+  }
+
+  @include r($breakpoint-3) {
+    font-size: 36px;
+  }
 }
 @mixin title-h2 {
   font-size: $title-h2;
+
+  @include r($breakpoint-1) {
+    font-size: 40px;
+  }
+
+  @include r($breakpoint-2) {
+    font-size: 36px;
+  }
+
+  @include r($breakpoint-4) {
+    font-size: 28px;
+  }
 }
 @mixin title-h3 {
   font-size: $title-h3;
+
+  @include r($breakpoint-1) {
+    font-size: 40px;
+  }
+
+  @include r($breakpoint-2) {
+    font-size: 32px;
+  }
+  @include r($breakpoint-4){
+    font-size: 28px;
+  }
+}
+@mixin title-h30 {
+  font-size: $title-h30;
+  @include r($breakpoint-1) {
+    font-size: 36px;
+  }
+
+  @include r($breakpoint-2) {
+    font-size: 32px;
+  }
+
+  @include r($breakpoint-3) {
+    font-size: 28px;
+  }
 }
 @mixin title-h35 {
   font-size: $title-h35;
 }
 @mixin title-h4 {
   font-size: $title-h4;
+
+  @include r($breakpoint-2) {
+    font-size: 22px;
+  }
 }
 @mixin title-h5 {
   font-size: $title-h5;
+
+  @include r($breakpoint-1) {
+    font-size: 20px;
+  }
+
+  @include r($breakpoint-2) {
+    font-size: 18px;
+  }
 }
 
 @mixin text {
   font-size: $text;
+
+  @include r($breakpoint-1) {
+    font-size: 18px;
+  }
+
+  @include r($breakpoint-2) {
+    font-size: 16px;
+  }
 }
 @mixin text1 {
   font-size: $text1;
@@ -40,11 +110,16 @@ $text3: 14px;
 }
 @mixin text3 {
   font-size: $text3;
+
+  @include r($breakpoint-2) {
+    font-size: 12px;
+  }
 }
 
 .title-h1 { @include title-h1 }
 .title-h2 { @include title-h2 }
 .title-h3 { @include title-h3 }
+.title-h30 { @include title-h30 }
 .title-h35 { @include title-h35 }
 .title-h4 { @include title-h4 }
 .title-h5 { @include title-h5 }
@@ -55,12 +130,20 @@ $text3: 14px;
 
 .title-mb-0 {
   margin-bottom: 60px;
+
+  @include r($breakpoint-2) {
+    margin-bottom: 40px;
+  }
 }
 .title-mb-1 {
   margin-bottom: 40px;
 }
 .title-mb-2 {
   margin-bottom: 30px;
+
+  @include r($breakpoint-1) {
+    margin-bottom: 20px;
+  }
 }
 .title-mb-3 {
   margin-bottom: 20px;
@@ -69,10 +152,19 @@ $text3: 14px;
 .section-padding-1 {
   padding-top: 80px;
   padding-bottom: 80px;
+
+  @include r($breakpoint-1) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .section-with-title {
   margin-top: -60px;
+
+  @include r($breakpoint-1) {
+    margin-top: -30px;
+  }
 }
 
 .section-title {
@@ -81,6 +173,22 @@ $text3: 14px;
   padding-right: 61px;
   transform: translateY(100px);
   z-index: 2;
+
+  @include r($breakpoint-1) {
+    transform: translateY(70px);
+  }
+
+  @include r($breakpoint-2) {
+    padding-right: 31px;
+  }
+
+  @include r($breakpoint-4){
+    font-size: 28px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 13px;
+
+  }
 
   span {
     position: relative;
@@ -101,25 +209,28 @@ $text3: 14px;
     height: 100%;
     top: 0;
 
-    @include rmin($breakpoint-4) {
-      $left-offset: calc((calc(100vw - #{map-get($container-max-widths, sm)} + 80px) ) / 2);
-      left: calc(-1 * #{$left-offset});
-      width: calc(#{$left-offset} + 100%);
-    };
+    @include r(500) {
+      width: calc(15px + 100%);
+      left: -15px;
+    }
 
-    @include rmin($breakpoint-3) {
+    $left-offset: calc((calc(100vw - #{map-get($container-max-widths, sm)} + 80px) ) / 2);
+    left: calc(-1 * #{$left-offset});
+    width: calc(#{$left-offset} + 100%);
+
+    @include rmin(984) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, md)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + 100%);
     };
 
-    @include rmin($breakpoint-2) {
+    @include rmin(1306) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, lg)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + 100%);
     };
 
-    @include rmin($breakpoint-1) {
+    @include rmin(1720) {
       $left-offset: calc((calc(100vw - #{map-get($container-max-widths, xl)} + 80px) ) / 2);
       left: calc(-1 * #{$left-offset});
       width: calc(#{$left-offset} + 100%);

@@ -18,6 +18,21 @@ a.button {
   @include ease-long;
   @include font-g;
 
+  @include r($breakpoint-1) {
+    padding: 18px 40px;
+    font-size: 18px;
+  }
+
+  @include r($breakpoint-2) {
+    font-size: 15px;
+    padding: 21px 30px;
+  }
+
+  @include r($breakpoint-4) {
+    font-size: 14px;
+    padding: 19px 30px;
+  }
+
   &-primary {
     background-color: $dark;
 

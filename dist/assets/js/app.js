@@ -59,7 +59,7 @@ $(() => {
             },
             976: {
                 slidesPerView: 3,
-                spaceBetween: 24,
+                spaceBetween: 41,
             },
             1200: {
                 slidesPerView: 3,
@@ -86,7 +86,7 @@ $(() => {
             },
             976: {
                 slidesPerView: 3,
-                spaceBetween: 24,
+                spaceBetween: 41,
             },
             1200: {
                 slidesPerView: 3,
@@ -113,29 +113,21 @@ $(() => {
             },
             976: {
                 slidesPerView: 3,
-                spaceBetween: 24,
+                spaceBetween: 41,
             },
             1200: {
                 slidesPerView: 3,
                 spaceBetween: 41,
             },
         },
-    })
-    ;
+    });
 
-    // $('.swiper-slide').mouseenter(function () {
-    //     console.log($(this).attr('data-swiper-slide-index'));
-    //     if ($(this).attr('data-swiper-slide-index') === '0' || $(this).attr('data-swiper-slide-index') === '1') {
-    //         console.log('lol');
-    //         $('.js-sales-section-title').addClass('hide');
-    //     }
-    // });
-    // $('.swiper-slide').mouseleave(function () {
-    //     if ($(this).attr('data-swiper-slide-index') === '0' || $(this).attr('data-swiper-slide-index') === '1') {
-    //         console.log('lol');
-    //         $('.js-sales-section-title').removeClass('hide');
-    //     }
-    // });
+    $('.sales .slider-wrapper').mouseenter(function () {
+        $('.sales .section-title__wrapper').addClass('active');
+    });
+    $('.sales .slider-wrapper').mouseleave(function () {
+        $('.sales .section-title__wrapper').removeClass('active');
+    });
 });
 
 $(() => {
@@ -162,7 +154,15 @@ $(() => {
         $('body').removeClass('fixed');
         $('.menu').removeClass('active');
     });
-})
+});
+
+
+$(() => {
+    $('.js-toggle-contacts').on('click', function () {
+        $(this).toggleClass('active');
+        $('.contacts-info__wrapper').toggleClass('wide');
+    });
+});
 
 // containers
 $(() => {
@@ -191,5 +191,42 @@ $(() => {
     });
 });
 
+$(window).on('load', function () {
+    function initHeader() {
+        if ($(window).width() < 1010) {
+            $('.header-subtitle').appendTo('.header-mobile-top__text');
+            $('.header-socials').appendTo('.header-mobile-top__socials');
+            $('.header-nav').appendTo('.menu__in');
+            $('.header-contacts').appendTo('.menu__in');
+            // $('.header-messenger__list').appendTo('.header-menu__messengers');
+
+            // $('.profile-header__tel').appendTo('.profile-header__menu-in');
+        } else {
+            $('.header-subtitle').appendTo('.header-subtitle__wrapper');
+            $('.header-socials').appendTo('.header-socials__wrapper');
+            $('.header-nav').appendTo('.header-nav__container');
+            $('.header-contacts').appendTo('.header-contacts__wrapper');
+            // $('.header-nav').appendTo('.header-nav__wrapper');
+            // $('.header-messenger__list').appendTo('.header-messenger__wrapper');
+
+            // $('.profile-header__tel').appendTo('.profile-header__tel-wrapper');
+        }
+    }
+
+    initHeader();
+
+    var oldWidth = $(window).width();
+    $(window).bind('resize', function () {
+
+
+        var nw = $(window).width();
+
+        // console.log(nw);
+        if (oldWidth !== nw) {
+            initHeader();
+        }
+        oldWidth = nw;
+    });
+})
 
 
