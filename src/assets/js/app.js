@@ -135,6 +135,18 @@ $(() => {
         var aid = $(this).attr("data-to");
         $('html,body').animate({scrollTop: $(aid).offset().top},1300);
     });
+    $('.menu').on('click', '.js-button-anchor', function (e) {
+        e.preventDefault();
+        $('body').removeClass('is-loading');
+        $('.burger').removeClass('active');
+        $('.menu').removeClass('active');
+
+        var aid = $(this).attr("data-to");
+
+        setTimeout(function () {
+            $('html,body').animate({scrollTop: $(aid).offset().top},1300);
+        }, 500);
+    });
 });
 
 $(() => {
