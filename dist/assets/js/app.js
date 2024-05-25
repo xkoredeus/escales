@@ -201,27 +201,6 @@ $(() => {
 
 
 $(() => {
-    $('.js-toggle-contacts').on('click', function () {
-        $(this).toggleClass('active');
-        $('.contacts-info__wrapper').toggleClass('wide');
-    });
-});
-
-// containers
-$(() => {
-    $(document).on('click', function (e) {
-        var container = $('.header');
-
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            $('.layout').removeClass('blur');
-            $('.header-search__base').removeClass('active');
-            $('.search-dropdown').removeClass('active');
-        }
-    });
-});
-
-
-$(() => {
     $('[data-fancybox]').fancybox({
         animationDuration: 600,
         animationEffect: 'slide-in-in',
