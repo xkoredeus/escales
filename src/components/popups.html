@@ -1,14 +1,19 @@
-<div id="popup-terms" class="popup__wrapper popup__wrapper-small" style="display: none">
+<div id="popup-call" class="popup__wrapper popup__wrapper-small" style="display: none">
     <div class="popup__in">
-        <div class="popup-title__wrapper mb-4">
-            <div class="title-h6 font-medium mb-3 color-darkPrimary">Условия займа</div>
+        <div class="popup-title title-h4 font-medium">Заполните и мы свяжемся с&nbsp;вами в течение 10 минут</div>
+        <div class="popup__fields">
+            <input type="text" class="form-input" placeholder="Имя фамилия">
+            <input type="tel" class="form-input js-tel" placeholder="Телефон">
+            <input type="email" class="form-input" placeholder="Email">
         </div>
-        <div class="color-grayText2 text5 lh13 mb-3">
-            <p>Укажите нужную вам сумму и срок с помощью кредитного калькулятора. Затем нажмите кнопку «Получить заём»</p>
-            <p>Наши специалисты примут решение о выдаче займа в течение 15 минут</p>
-            <p>Подтвердите договор с помощью SMS кода, и сразу же получите деньги на карту.</p>
-        </div>
+        <label class="checkbox">
+            <input type="checkbox" checked>
+            <span class="checkbox__text">
+                <svg><use xlink:href="#check"></use></svg>
+                <span>Принимаю условия <a href="#" class="font-gbold link-underline">политики конфиденциальности</a></span>
+            </span>
+        </label>
 
-        <button class="button button-primary w-100 text4 button-small-radius">Получить займ</button>
+        <button class="button button-primary">Забронировать</button>
     </div>
 </div>

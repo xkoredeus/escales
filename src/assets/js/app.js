@@ -92,6 +92,41 @@ $(() => {
     $('.sales .slider-wrapper').mouseleave(function () {
         $('.sales .section-title__wrapper').removeClass('active');
     });
+
+
+});
+
+$(() => {
+    var offerBgSlider = new Swiper(".js-offer-bg-slider", {
+        speed: 1200,
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        slidesPerView: 1,
+        spaceBetween: 40,
+        allowTouchMove: false,
+        navigation: {
+            nextEl: ".js-offer-slider-next",
+            prevEl: ".js-offer-slider-prev",
+        },
+    });
+    var offerSlider = new Swiper(".js-offer-slider", {
+        speed: 1200,
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        allowTouchMove: false,
+        navigation: {
+            nextEl: ".js-offer-slider-next",
+            prevEl: ".js-offer-slider-prev",
+        },
+    });
 });
 
 $(() => {
@@ -109,14 +144,10 @@ $(() => {
 
 // header
 $(() => {
-    $('.js-show-menu').on('click', function () {
-        $('body').addClass('fixed');
-        $('.menu').addClass('active');
-    });
-
-    $('.js-hide-menu').on('click', function () {
-        $('body').removeClass('fixed');
-        $('.menu').removeClass('active');
+    $('.js-toggle-menu').on('click', function () {
+        $(this).toggleClass('active');
+        $('body').toggleClass('is-loading');
+        $('.menu').toggleClass('active');
     });
 });
 

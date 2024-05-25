@@ -1,28 +1,79 @@
-<section id="offer" class="offer section-mb-3" style="background-image: url('{{root}}assets/img/offer-1.jpg');">
-    <div class="offer-lines" style="background-image: url('{{root}}assets/img/circled-lines.gif');"></div>
+<section id="offer" class="offer section-mb-3">
+    <div class="offer-bg-slider js-offer-bg-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="offer-bg-slide" style="background-image: url('{{root}}assets/img/offer-1.jpg');">
+                    <div class="offer-lines" style="background-image: url('{{root}}assets/img/circled-lines.gif');"></div></div>
+                <div class="offer-bg-slide" style="background-image: url('{{root}}assets/img/offer-1.jpg');">
+                    <div class="offer-lines" style="background-image: url('{{root}}assets/img/circled-lines.gif');"></div></div>
+            </div>
+        </div>
+    </div>
 
     {{> header }}
 
-    <div class="offer-slide">
-        <div class="container">
-            <div class="row h-100">
-                <div class="col-lg-8 col-11">
-                    <div class="offer-info">
-                        <div class="offer-info__text">
-                            <div class="title-h2 font-medium">Европейский бутик с коллекцией<br class="d-none d-md-inline">
-                                2024 года в&nbsp;1&nbsp;минуте от&nbsp;МКАД</div>
-                            <div class="text font-g">Более 700 безупречных<br class="d-md-none"> образов <span class="font-gbold">для работы и отдыха</span></div>
-                        </div>
+    <div class="offer-slider js-offer-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="offer-slide">
+                    <div class="container">
+                        <div class="row h-100">
+                            <div class="col-lg-8 col-11">
+                                <div class="offer-info">
+                                    <div class="offer-info__text">
+                                        <div class="title-h2 font-medium">Европейский бутик с коллекцией<br class="d-none d-md-inline">
+                                            2024 года в&nbsp;1&nbsp;минуте от&nbsp;МКАД</div>
+                                        <div class="text font-g">Более 700 безупречных<br class="d-md-none"> образов <span class="font-gbold">для работы и отдыха</span></div>
+                                    </div>
 
-                        <button class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-1 h-100">
-                    <div class="offer-picture__wrapper">
-                        <img src="{{root}}assets/img/offer-0-2.png" alt="offer picture">
+                                    <button data-src="#popup-call" data-fancybox class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-1 h-100">
+                                <div class="offer-picture__wrapper">
+                                    <img src="{{root}}assets/img/offer-0-2.png" alt="offer picture">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="swiper-slide">
+                <div class="offer-slide">
+                    <div class="container">
+                        <div class="row h-100">
+                            <div class="col-lg-8 col-11">
+                                <div class="offer-info">
+                                    <div class="offer-info__text">
+                                        <div class="title-h2 font-medium">Европейский бутик с коллекцией<br class="d-none d-md-inline">
+                                            2024 года в&nbsp;1&nbsp;минуте от&nbsp;МКАД</div>
+                                        <div class="text font-g">Более 700 безупречных<br class="d-md-none"> образов <span class="font-gbold">для работы и отдыха</span></div>
+                                    </div>
+
+                                    <button data-src="#popup-call" data-fancybox class="button button-primary">ПОЛУЧИТЬ КАТАЛОГ И 15% СКИДКУ НА&nbsp;ПЕРВЫЙ&nbsp;ЗАКАЗ</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-1 h-100">
+                                <div class="offer-picture__wrapper">
+                                    <img src="{{root}}assets/img/offer-0-2.png" alt="offer picture">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav swiper-nav">
+            <button class="js-offer-slider-prev">
+                <svg>
+                    <use xlink:href="#chevron-left"></use>
+                </svg>
+            </button>
+            <button class="js-offer-slider-next">
+                <svg>
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </button>
         </div>
     </div>
 </section>
@@ -116,7 +167,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="gift-girl__wrapper">
-                    <img src="{{root}}assets/img/gift-girl.png" alt="Girl">
+                    <img src="{{root}}assets/img/gift-girl-3.png" alt="Girl">
                 </div>
             </div>
             <div class="col-md-6">
@@ -391,13 +442,19 @@
                         <div class="title-h30 font-medium title-mb-2">Вещи будут ждать уже вас в&nbsp;примерочной.</div>
                         <div class="font-gbold title-mb-3 text">Выберите способ связи:</div>
                         <div class="likes__buttons title-mb-0">
-                            <a href="#" class="likes-button" style="background-color: #43D854;">
+                            <a href="#" class="likes-button">
                                 <svg><use xlink:href="#ws"></use></svg>
-                                <span>Связяться в WhatsApp</span>
+                                <span>
+                                    <span class="desktop-text">Связяться в WhatsApp</span>
+                                    <span class="mobile-text">Связяться в WA</span>
+                                </span>
                             </a>
-                            <a href="#" class="likes-button" style="background-color: #27A7E7;">
+                            <a href="#" class="likes-button">
                                 <svg><use xlink:href="#tg-1"></use></svg>
-                                <span>Связяться в Телеграм</span>
+                                <span>
+                                    <span class="desktop-text">Связяться в Телеграм</span>
+                                    <span class="mobile-text">Связяться в TG</span>
+                                </span>
                             </a>
                         </div>
 

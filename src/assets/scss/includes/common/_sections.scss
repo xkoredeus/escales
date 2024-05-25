@@ -4,12 +4,20 @@
   @include r($breakpoint-1) {
     margin-bottom: 60px;
   }
+
+  @include r($breakpoint-4) {
+    margin-bottom: 30px;
+  }
 }
 @mixin section-mb-2 {
   margin-bottom: 120px;
 
   @include r($breakpoint-1) {
     margin-bottom: 60px;
+  }
+
+  @include r($breakpoint-4) {
+    margin-bottom: 30px;
   }
 }
 @mixin section-mb-3 {
@@ -18,9 +26,17 @@
   @include r($breakpoint-1) {
     margin-bottom: 60px;
   }
+
+  @include r($breakpoint-4) {
+    margin-bottom: 30px;
+  }
 }
 @mixin section-mb-4 {
   margin-bottom: 90px;
+
+  @include r($breakpoint-4) {
+    margin-bottom: 30px;
+  }
 }
 .section-mb-1 { @include section-mb-1; }
 .section-mb-2 { @include section-mb-2; }
