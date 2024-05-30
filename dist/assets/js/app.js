@@ -200,6 +200,16 @@ $(() => {
 });
 
 
+// header
+$(() => {
+    $('.js-toggle-contacts').on('click', function () {
+        $(this).toggleClass('active');
+        $('.contacts-info__wrapper').toggleClass('wide');
+        // $('.menu').toggleClass('active');
+    });
+});
+
+
 $(() => {
     $('[data-fancybox]').fancybox({
         animationDuration: 600,
